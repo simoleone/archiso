@@ -41,7 +41,7 @@ do_special_console()
 
     stat_busy "Starting agetty on console: ${cmdline_console}"
     echo "${dev}" >> /etc/securetty
-    echo "s0:2345:respawn:/sbin/agetty ${rts} ${baud} ${dev} linux" >> /etc/inittab
+    echo "z0:2345:respawn:/sbin/agetty ${rts} ${baud} ${dev} linux" >> /etc/inittab
     /sbin/telinit q
     stat_done
 }
